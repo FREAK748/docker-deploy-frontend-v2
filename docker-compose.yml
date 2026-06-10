@@ -1,0 +1,7 @@
+services:
+  frontend:
+    image: 182freak/234-deploylab-frontend:latest
+    pull_policy: always
+    ports:
+      - "8081:8080"
+    restart: unless-stopped
