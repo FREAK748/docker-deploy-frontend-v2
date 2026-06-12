@@ -7,7 +7,7 @@ COPY . .
 # Build with placeholder values that will be replaced at runtime
 RUN VITE_GRAPHQL_URI=VITE_GRAPHQL_URI_PLACEHOLDER \
     VITE_SERVER_URI=VITE_SERVER_URI_PLACEHOLDER \
-    npm run build --mode production
+    npm run build
 
 # Production stage
 FROM nginx:alpine AS production-stage
