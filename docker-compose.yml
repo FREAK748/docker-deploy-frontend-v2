@@ -1,5 +1,5 @@
 services:
-  frontend:
+  frontend-old:
     image: 182freak/234-deploylab-frontend:latest
     pull_policy: always
     ports:
@@ -7,4 +7,14 @@ services:
     environment:
       VITE_GRAPHQL_URI: http://100.57.163.24:8082/graphql
       VITE_SERVER_URI: http://100.57.163.24:8082
+    restart: unless-stopped
+
+  frontend-new:
+    image: 182freak/234-deploylab-frontend:latest
+    pull_policy: always
+    ports:
+      - "8084:8080"
+    environment:
+      VITE_GRAPHQL_URI: http://100.57.163.24:8083/graphql
+      VITE_SERVER_URI: http://100.57.163.24:8083
     restart: unless-stopped
